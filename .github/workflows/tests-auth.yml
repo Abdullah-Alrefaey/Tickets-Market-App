@@ -1,0 +1,13 @@
+name: tests-auth
+
+# When we are running this workflow
+on:
+  pull_request
+
+# Define what we want to do whenever a pull request is created/updated
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+      - run: cd auth && npm install && npm run test:ci
